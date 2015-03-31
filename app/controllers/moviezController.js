@@ -1,12 +1,12 @@
-app.controller('MoviezCtrl', function($http) {
+app.controller('MoviezCtrl', function($http, $scope) {
 //	var self = this;
 	
 	/*$http.get('app/data/movies.json')
 	.success(function (response) {
 		this.MoviesInfo = response;
-	});*/
+	});*/ 
 	
-	this.MoviesInfo = [
+	$scope.MoviesInfo = [
 	{	
 		id: 1,
 		moviename : "Battlefield Earth",
@@ -145,29 +145,17 @@ app.controller('MoviezCtrl', function($http) {
 	}
 	];
 	
-	this.Concessions = 
-	[{	
-		id: 1,
-		name : "Popcorn",
-		price : "5",
-		description : "Cold Popcorn that has been popped sometime in the last year!"
-	},
-	{	
-		id: 2,
-		name : "Chocolate Covered Deep Fried French Fries",
-		price : "50",
-		description: "Our scientists have created this piece of wonder. French Fries that are deep fried, then covered in Chocolate!"
-	},
-	{	
-		id: 3,
-		name : "Redbull",
-		price : "2.99",
-		description : "A dose of sugar to keep you awake during our classics!"
-	},
-	{	
-		id: 4,
-		name : "MoviezZz Tap Water",
-		price : "99.99",
-		description : "Tap Water infused with our secret MoviezZz ingredients!"
-	}];
+	$scope.moviesChange = function() {
+		//Save current movie times from select movie to be put into second select
+		$scope.movTimes = $scope.currentMovie.times;
+		//Show Second Select
+		$scope.ShowTime = true;
+	};
+	
+	$scope.updateMoviesCost = function() {
+		$scope.moviesCost = $scope.moviesTicketAmt * 1337.99;
+	}
+	
+	$scope.ShowTime = false;
+
 });

@@ -25,4 +25,13 @@ app.controller('ConcessionCtrl', function($http, $scope) {
 		price : "99.99",
 		description : "Tap Water infused with our secret MoviezZz ingredients!"
 	}];
+	
+	$scope.conc1 = 0; 
+	$scope.conc2 = 0; 
+	$scope.conc3 = 0;
+	$scope.conc4 = 0;
+	
+	$scope.updateTotalCost = function(price) {
+		$scope.totalCost = ($scope.conc1 * 5) + ($scope.conc2 * 5) + ($scope.conc3 * 5) + ($scope.conc4 * 5);
+	}
 });
