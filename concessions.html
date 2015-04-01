@@ -1,16 +1,20 @@
-<div class="container" ng-controller="ConcessionCtrl">
+<div class="container" >
+			Chosen movie - {{fV.chosenMovie.moviename}}<br/>
+			Movie time - {{fV.movieTime}}
 			<h2>Concessions</h2>
 			<p>Now it's time for some overpriced concessions!</p>
 			<form class="form-horizontal">
-				<!--<div class="form-group" ng-repeat="conc in concessions">
-					<label for="input{{name}}" class="col-sm-2 control-label">{{conc.name}}</label>
+				<div class="form-group" ng-repeat="conc in concessions">
+					<label for="conc.id" class="col-sm-2 control-label">{{conc.name}}</label>
 					<div class="col-sm-5">
-						<input type="number" class="form-control" id="input{{name}}" placeholder="Select an amount" ng-model="" ng-change="updateTotalCost()">
+						<input type="number" class="form-control" id="conc.id" placeholder="Select an amount" ng-model="conc.selectedAmt" min=0 ng-change="updateConcCost(conc.price, conc.selectedAmt)" >
 					</div>
 					<div class="col-sm-5">
 						Price - {{conc.price}}
+						Amt Selected - {{conc.selectedAmt}}
 					</div>
-				</div>-->
+				</div>
+				AFTER LOOP
 				<div class="form-group">
 					<label for="inputPopcorn" class="col-sm-2 control-label">Popcorn</label>
 					<div class="col-sm-5">
@@ -38,10 +42,12 @@
 				<div class="form-group">
 					<label for="inputTotal" class="col-sm-2 control-label">Total Cost</label>
 					<div class="col-sm-5">
-						<input type="number" ng-model="totalCost  " class="form-control" id="inputTotal" placeholder="$0.00" readonly>
+						<!--<input type="number" ng-model="totalCost  " class="form-control" id="inputTotal" placeholder="$0.00" readonly>-->
+						<span id="inputTotal">{{totalCost | currency}}</span>
 					</div>
 				</div>
-				<input class="btn btn-default" type="submit"/>
+				<!--<input class="btn btn-default" type="submit"/>-->
+				<a href="#/confirmation.html" class="btn btn-default" type="submit">Continue</a>
 				<input class="btn btn-default" type="reset"/>
 			</form>
 			</div>

@@ -11,7 +11,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
 		<script src="app/app.js"></script>
 		<script src="app/controllers/moviezController.js"></script>
-		<script src="app/controllers/concController.js"></script>
+		<script src="app/controllers/formController.js"></script>
 		<!--<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,17 +25,18 @@
 			<p>Now unfortunately, we are the last remaining movie theatre left on Earth.  Come to us to see some of the greatest classics ever!</p>
 		</div>
 		<div class="container" ng-controller="MoviezCtrl">
-			<p>Currently We have ten movies being shown at MoviezZz, which are:</p>
+			<p>Currently we have ten movies being shown at MoviezZz, which are:</p>
 			<table class="table table-condensed table-responsive">
 				<thead>
 					<tr>
 					  <th>#</th>
 					  <th>Movie Name</th>
 					  <th>Release Date</th>
+					  <th>Info</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="mv in MoviesInfo">
+					<tr ng-repeat="mv in MoviesInfo | orderBy: moviename">
 					  <th scope="row">{{mv.id}}</th>
 					  <td>{{mv.moviename}}</td>
 					  <td>{{mv.releasedate}}</td>
@@ -45,12 +46,9 @@
 			</table>
 		</div>
 		
-		<ul>
-			<li><a href="#/movietime.html">movietime</a></li>
-			<li><a href="#/concessions.html">concessions</a></li>
-			<li><a href="#/confirmation.html">confirmation</a></li>
-		</ul>
-		
+		<div class="container">
+			<p></p>
+		</div>
 		<div ng-view></div>
 		<!--Customer Info-->
 		
