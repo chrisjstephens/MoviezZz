@@ -31,10 +31,10 @@ app.factory('FormValues', function(){
 	formVals.movieTime = '';
 	formVals.movieTickets = '';
 	formVals.movieCost = '';
-	formVals.concPopcorn = '';
-	formVals.concCcDfFf = '';
-	formVals.concRedbull = '';
-	formVals.concTapWater = '';
+	formVals.concObjects = {};
+	formVals.concPurchases = '';
+	formVals.concTotalCost = 0;
+	formVals.finalCost = 0;
 	
 	
 	return formVals;

@@ -182,31 +182,58 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 	//give custom factory to all form values so they can change pages
 	$scope.fV = FormValues;
 	
-	$scope.conc1 = 0; 
-	$scope.conc2 = 0; 
-	$scope.conc3 = 0;
-	$scope.conc4 = 0;
 	
-	$scope.updateTotalCost = function(price) {
-		$scope.totalCost = ($scope.conc1 * 5) + ($scope.conc2 * 5) + ($scope.conc3 * 5) + ($scope.conc4 * 5);
-	}
+
 	
-	$scope.updateConcCost = function(price, selectedAmt) {
-		$scope.totalCost +=  (price * selectedAmt);
-		alert($scope.totalCost);
+	$scope.updateConcCost = function(concObj) {
+		$scope.fV.concObjects = concObj;
+		//console.log($scope.fV.concObjects);
+		
+		//reset value to 0
+		$scope.fV.concTotalCost = 0;
+		$scope.fV.concPurchases = "";
+		
+		for(var i = 0, l = $scope.fV.concObjects.length; i < l; i++)
+		{
+			
+			console.log($scope.fV.concObjects[i].selectedAmt + "Price -" + $scope.fV.concObjects[i].price);
+			if($scope.fV.concObjects[i].selectedAmt > 0)
+			{
+				var itemPrice = 0;
+				var itemsPurch = "";
+				itemPrice = ($scope.fV.concObjects[i].selectedAmt) * ($scope.fV.concObjects[i].price);
+				itemsPurch = "" + $scope.fV.concObjects[i].selectedAmt + " x " + $scope.fV.concObjects[i].name + " @ " + $scope.fV.concObjects[i].price + ",";
+				$scope.fV.concTotalCost += itemPrice;
+				//Add Concessions purchased to summary
+				$scope.fV.concPurchases += itemsPurch; 
+			}
+			//$scope.fV.concTotalCost = ($scope.fV.concObjects[i].selectedAmt) * ($scope.fV.concObjects[i].price);
+		}
+		console.log($scope.fV.concPurchases);
+
 	}
 	
 	$scope.moviesChange = function() {
 		//Save current movie times from select movie to be put into second select
 		//$scope.movTimes = $scope.currentMovie.times;
-		$scope.movTimes = $scope.fV.chosenMovie.times;
+		$scope.movTimes = $scope.fV.movieChosen.times;
+		//$scope.movTimes = $scope.fV.movieChosen.moviename.times;
 		//Show Second Select
 		$scope.ShowTime = true;
+		
 	};
 	
 	$scope.updateMoviesCost = function() {
-		$scope.moviesCost = $scope.moviesTicketAmt * 1337.99;
+		$scope.fV.movieCost = 0;
+		alert($scope.fV.movieCost);
+		$scope.fV.movieCost = $scope.moviesTicketAmt * 1337.99;
 	}
+	
+	$scope.calcTotal = function (){
+		console.log("OMG CALC RUN")
+		$scope.fV.finalCost = $scope.fV.movieCost + $scope.fV.concTotalCost;	
+	}
+	
 	
 	$scope.ShowTime = false;
 

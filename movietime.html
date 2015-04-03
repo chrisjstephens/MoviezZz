@@ -5,7 +5,7 @@
 				<div class="form-group">
 					<label for="selectMovie" class="col-sm-2 control-label">Movie</label>
 					<div class="col-sm-10">
-						<select class="form-control" ng-model="fV.chosenMovie.moviename" id="selectMovie" placeholder="Movie" ng-options="mov.moviename for mov in MoviesInfo" ng-change="moviesChange()">
+						<select class="form-control" ng-model="fV.movieChosen" id="selectMovie" placeholder="Movie" ng-options="mov.moviename for mov in MoviesInfo" ng-change="moviesChange()">
 							<option value="">Please select a movie</option>
 						</select>
 					</div>
@@ -29,11 +29,11 @@
 					<label for="inputWater" class="col-sm-2 control-label">Total Cost</label>
 					<div class="col-sm-5">
 						<!--<input type="number" ng-model="moviesCost" class="form-control" id="inputWater" placeholder="$0.00" readonly>-->
-						<span id="inputWater">{{moviesCost | currency}}</span>
+						<span id="inputWater">{{fV.movieCost | currency}}</span>
 					</div>
 				</div>
 				<!--<input class="btn btn-default" type="submit"/>-->
 				<a href="#/concessions.html" class="btn btn-default" type="submit">Continue</a>
 				<input class="btn btn-default" type="reset"/>
 			</form>
-		</div>
+</div>

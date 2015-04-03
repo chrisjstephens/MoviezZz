@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-init="calcTotal();">
 			<h2>Confirmation Screen</h2>
 			<p>Please review the information below, and confirm your MoviezZz Purchase!</p>
 			<form class="form-horizontal">
@@ -27,7 +27,7 @@
 					<label for="inputPopcorn" class="col-sm-2 control-label">Movie</label>
 					<div class="col-sm-10">
 						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Movie" readonly>-->
-						<span>{{fV.chosenMovie.moviename}}</span>
+						<span>{{fV.movieChosen.moviename}}</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -41,28 +41,28 @@
 					<label for="inputPopcorn" class="col-sm-2 control-label">Concession Purchases</label>
 					<div class="col-sm-10">
 						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Concession Purchases" readonly>-->
-						<span></span>
+						<span>{{fV.concPurchases}}</span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputPopcorn" class="col-sm-2 control-label">Movie Cost</label>
 					<div class="col-sm-10">
 						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Total Cost" readonly>-->
-						<span>{{moviesCost}}</span>
+						<span>{{fV.movieCost | currency}}</span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputPopcorn" class="col-sm-2 control-label">Concession Cost</label>
 					<div class="col-sm-10">
 						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Total Cost" readonly>-->
-						<span>{{totalCost}}</span>
+						<span>{{fV.concTotalCost | currency}}</span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputPopcorn" class="col-sm-2 control-label">Total Cost</label>
 					<div class="col-sm-10">
 						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Total Cost" readonly>-->
-						<span>{{finalCost}}</span>
+						<span>{{fV.finalCost | currency}}</span>
 					</div>
 				</div>
 				<input class="btn btn-default" type="submit"/>
