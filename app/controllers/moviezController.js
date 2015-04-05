@@ -1,4 +1,4 @@
-app.controller('MoviezCtrl', function($http, $scope, FormValues) {
+app.controller('MoviezCtrl', function($http, $scope, $location, FormValues) {
 //	var self = this;
 	
 	/*$http.get('app/data/movies.json')
@@ -11,7 +11,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 1,
 		moviename : "Battlefield Earth",
 		releasedate : "12 May 2000",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0185183",
 		price : "500",
 		times: [
 			"1:00 PM",
@@ -31,7 +31,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 2,
 		moviename : "Ace Ventura: The Pet Detective",
 		releasedate : "4 February 1994",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0109040",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -49,7 +49,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 3,
 		moviename : "Armageddon",
 		releasedate : "1 July 1998",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0120591",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -60,7 +60,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 4,
 		moviename : "Deep Impact",
 		releasedate : "8 May 1998",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0120647",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -71,7 +71,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 5,
 		moviename : "Mars Attacks!",
 		releasedate : "13 December 1996",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0116996",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -82,7 +82,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 6,
 		moviename : "The Lion King",
 		releasedate : "24 June 1994",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0110357",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -93,7 +93,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 7,
 		moviename : "Home Alone",
 		releasedate : "16 November 1990",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0099785",
 		price : "10",
 		times: [
 			"1:00 PM",
@@ -114,7 +114,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 8,
 		moviename : "Free Willy",
 		releasedate : "16 July 1993",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0106965",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -125,7 +125,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 9,
 		moviename : "Homeward Bound",
 		releasedate : "12 February 1993",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0107131",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -136,7 +136,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		id: 10,
 		moviename : "Space Jam",
 		releasedate : "15 November 1996",
-		summary : "",
+		imdbLink : "http://www.imdb.com/title/tt0117705",
 		price : "1",
 		times: [
 			"1:00 PM",
@@ -176,8 +176,14 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		selectedAmt : 0
 	}];
 	
-	$scope.validateForm1 = function() {
-		
+	$scope.goToForm2 = function() {
+		$location.path('/movietime.html');
+	}
+	$scope.goToForm3 = function() {
+		$location.path('/concessions.html');
+	}
+	$scope.goToForm4 = function() {
+		$location.path('/confirmation.html');
 	}
 	//give custom factory to all form values so they can change pages
 	$scope.fV = FormValues;
@@ -215,18 +221,25 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 	
 	$scope.moviesChange = function() {
 		//Save current movie times from select movie to be put into second select
-		//$scope.movTimes = $scope.currentMovie.times;
+
 		$scope.movTimes = $scope.fV.movieChosen.times;
-		//$scope.movTimes = $scope.fV.movieChosen.moviename.times;
-		//Show Second Select
+		$scope.fV.movieCost = 0; 
+		$scope.moviesTicketAmt = 1;
+		
+		
+		//Show Rest of Items in Form
 		$scope.ShowTime = true;
 		
 	};
 	
-	$scope.updateMoviesCost = function() {
+	$scope.showTickets = function() {
+		$scope.ShowTime2 = true;
+		$scope.updateMoviesCost($scope.fV.movieChosen.price);
+	}
+	
+	$scope.updateMoviesCost = function(price) {
 		$scope.fV.movieCost = 0;
-		alert($scope.fV.movieCost);
-		$scope.fV.movieCost = $scope.moviesTicketAmt * 1337.99;
+		$scope.fV.movieCost = $scope.moviesTicketAmt * price;
 	}
 	
 	$scope.calcTotal = function (){
@@ -234,7 +247,7 @@ app.controller('MoviezCtrl', function($http, $scope, FormValues) {
 		$scope.fV.finalCost = $scope.fV.movieCost + $scope.fV.concTotalCost;	
 	}
 	
-	
 	$scope.ShowTime = false;
+	$scope.ShowTime2 = false;
 
 });

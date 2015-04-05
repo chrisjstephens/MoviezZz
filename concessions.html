@@ -1,9 +1,7 @@
 <div class="container" >
-			Chosen movie - {{fV.movieChosen.moviename}}<br/>
-			Movie time - {{fV.movieTime}}
 			<h2>Concessions</h2>
 			<p>Now it's time for some overpriced concessions!</p>
-			<form class="form-horizontal">
+			<form class="form-horizontal" name="concForm" ng-submit="concForm.$valid && goToForm4();" novalidate>
 				<div class="form-group" ng-repeat="conc in concessions">
 					<label for="conc.id" class="col-sm-2 control-label">{{conc.name}}</label>
 					<div class="col-sm-5">
@@ -22,8 +20,8 @@
 						<span id="inputTotal">{{fV.concTotalCost | currency}}</span>
 					</div>
 				</div>
-				<!--<input class="btn btn-default" type="submit"/>-->
-				<a href="#/confirmation.html" class="btn btn-default" type="submit">Continue</a>
+				<input class="btn btn-default" type="submit"/>
+				<!--<a href="#/confirmation.html" class="btn btn-default" type="submit">Continue</a>-->
 				<input class="btn btn-default" type="reset"/>
 			</form>
 			</div>

@@ -20,19 +20,19 @@
 	<body ">
 		<div class="container">
 			<h1>Welcome to MoviezZz!</h1>
-			<p>The year is 2022, movies go straight to release on Youtube and multi-media conglomerate Piratebay.</p> 
+			<p>The year is 2022, movies go straight to release on YouTube and multi-media conglomerate Piratebay.</p> 
 			<p>Since 2019, movie theatres have been closing slowly around the world.</p>
 			<p>Now unfortunately, we are the last remaining movie theatre left on Earth.  Come to us to see some of the greatest classics ever!</p>
 		</div>
 		<div class="container" ng-controller="MoviezCtrl">
-			<p>Currently we have ten movies being shown at MoviezZz, which are:</p>
+			<p>Currently we have {{MoviesInfo.length}} movies being shown at MoviezZz, which are:</p>
 			<table class="table table-condensed table-responsive">
 				<thead>
 					<tr>
-					  <th>#</th>
+					  <th>Theatre Number</th>
 					  <th>Movie Name</th>
 					  <th>Release Date</th>
-					  <th>Info</th>
+					  <th>IMDB Link</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,7 +40,7 @@
 					  <th scope="row">{{mv.id}}</th>
 					  <td>{{mv.moviename}}</td>
 					  <td>{{mv.releasedate}}</td>
-					  <td><button type="button" class="btn btn-info">Info</button></td>
+					  <td><a type="button" ng-href="{{mv.imdbLink}}" class="btn btn-info">IMDB </a></td>
 					</tr>
 				</tbody>
 			</table>
