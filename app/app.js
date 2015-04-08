@@ -1,5 +1,6 @@
 var app = angular.module('moviez', ['ngRoute']);
 
+//code for router that controls the ui-router/ng-view at the bottom of the page
 app.config(function($routeProvider) {
 	$routeProvider
 	.when('/', {
@@ -21,22 +22,21 @@ app.config(function($routeProvider) {
 });
 
 app.factory('FormValues', function(){
-		
-	formVals = {};
-	
-	formVals.custNames = '';
-	formVals.custEmail = '';
-	formVals.custPhone = '';
-	formVals.movieChosen = '';
-	formVals.movieTime = '';
-	formVals.movieTickets = '';
-	formVals.movieCost = '';
-	formVals.concObjects = {};
-	formVals.concPurchases = '';
-	formVals.concTotalCost = 0;
-	formVals.finalCost = 0;
-	
+	//Custom factory that allows values to be passed in between different pages in the ng-view form.	
+	var formVals = {
+		custEmail : '',
+		custPhone : '',
+		movieChosen : '',
+		movieTime : '',
+		movieTickets : '',
+		movieCost : 0,
+		concObjects : {},
+		concPurchases : '',
+		concTotalCost : 0,
+		finalCost : 0,
+		tax : 0,
+		subTotal : 0
+	};
 	
 	return formVals;
-	
 });

@@ -1,27 +1,24 @@
 <div class="container" >
 			<h2>Concessions</h2>
 			<p>Now it's time for some overpriced concessions!</p>
-			<form class="form-horizontal" name="concForm" ng-submit="concForm.$valid && goToForm4();" novalidate>
+			<form class="form-horizontal well" name="concForm" ng-submit="concForm.$valid && goToForm4();" novalidate>
 				<div class="form-group" ng-repeat="conc in concessions">
 					<label for="conc.id" class="col-sm-2 control-label">{{conc.name}}</label>
 					<div class="col-sm-5">
 						<input type="number" class="form-control" id="conc.id" placeholder="Select an amount" ng-model="conc.selectedAmt" min=0 ng-change="updateConcCost(concessions)" >
 					</div>
 					<div class="col-sm-5">
-						Price - {{conc.price}}
-						Amt Selected - {{conc.selectedAmt}}
+						<span class="spanStyle"><strong>Price </strong> - {{conc.price | currency}}</span>
 					</div>
 				</div>
 			
 				<div class="form-group">
 					<label for="inputTotal" class="col-sm-2 control-label">Total Cost</label>
 					<div class="col-sm-5">
-						<!--<input type="number" ng-model="totalCost  " class="form-control" id="inputTotal" placeholder="$0.00" readonly>-->
-						<span id="inputTotal">{{fV.concTotalCost | currency}}</span>
+						<span id="inputTotal" class="spanStyle">{{fV.concTotalCost | currency}}</span>
 					</div>
 				</div>
 				<input class="btn btn-default" type="submit"/>
-				<!--<a href="#/confirmation.html" class="btn btn-default" type="submit">Continue</a>-->
 				<input class="btn btn-default" type="reset"/>
 			</form>
 			</div>

@@ -1,41 +1,39 @@
 <div class="container">
 			<h2>Pick a Movie & Time</h2>
 			<p>Please pick the movie you'd like to see and a time that works best for you!</p>
-			<form class="form-horizontal" name="movieTimeForm" ng-submit="movieTimeForm.$valid && goToForm3();">
+			<form class="form-horizontal well" name="movieTimeForm" ng-submit="movieTimeForm.$valid && goToForm3();" novalidate>
 				<div class="form-group">
 					<label for="selectMovie" class="col-sm-2 control-label">Movie</label>
 					<div class="col-sm-10">
-						<select class="form-control" ng-model="fV.movieChosen" id="selectMovie" placeholder="Movie" ng-options="mov.moviename for mov in MoviesInfo" ng-change="moviesChange()">
-							<option value="">Please select a movie</option>
+						<select class="form-control" ng-model="fV.movieChosen" id="selectMovie" placeholder="Movie" ng-options="mov.moviename for mov in MoviesInfo" ng-change="moviesChange()" required>
+							<option value="" disabled selected>Please select a movie</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group" ng-show="ShowTime">
 					<label for="selectMovieTime" class="col-sm-2 control-label">Movie Time</label>
 					<div class="col-sm-10">
-						<select class="form-control" ng-model="fV.movieTime" id="selectMovieTime" placeholder="Time" ng-options="timez for timez in movTimes" ng-change="showTickets()">
-							<option value="">Please select a time for this movie.</option>
+						<select class="form-control" ng-model="fV.movieTime" id="selectMovieTime" placeholder="Time" ng-options="timez for timez in movTimes" ng-change="showTickets()" required>
+							<option value="" disabled selected>Please select a time for this movie.</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group" ng-show="ShowTime2">
 					<label for="inputWater" class="col-sm-2 control-label">How many tickets?</label>
 					<div class="col-sm-5">
-						<input type="number" ng-model="moviesTicketAmt" class="form-control" name="iTickets" id="inputWater" min="1" ng-change="updateMoviesCost(fV.movieChosen.price)" value  ="1" required>
+						<input type="number" ng-model="moviesTicketAmt" class="form-control" name="iTickets" id="inputWater" min="1" maximum="10" ng-change="updateMoviesCost(fV.movieChosen.price)" required>
 					</div>
 					<div class="col-sm-5">
-						<span ng-show="infoForm.iTickets.$error.required">Please enter a phone number.</span>
+						<span class="spanStyle"><strong>Cost per ticket </strong> - {{fV.movieChosen.price | currency}}</span>
 					</div>
 				</div>
 				<div class="form-group" ng-show="ShowTime2">
 					<label for="inputWater" class="col-sm-2 control-label">Total Cost</label>
 					<div class="col-sm-5">
-						<!--<input type="number" ng-model="moviesCost" class="form-control" id="inputWater" placeholder="$0.00" readonly>-->
-						<span id="inputWater">{{fV.movieCost | currency}}</span>
+						<span id="inputWater" class="spanStyle">{{fV.movieCost | currency}}</span>
 					</div>
 				</div>
-				<input class="btn btn-default" type="submit"/>
-				<!--<a href="#/concessions.html" class="btn btn-default" type="submit">Continue</a>-->
-				<input class="btn btn-default" type="reset"/>
+				<input class="btn btn-default" ng-disabled="movieTimeForm.$invalid" type="submit"/>
+				<input class="btn btn-default" ng-click="restartMovie()" type="reset"/>
 			</form>
 </div>

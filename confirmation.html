@@ -1,71 +1,73 @@
 <div class="container" ng-init="calcTotal();">
 			<h2>Confirmation Screen</h2>
-			<p>Please review the information below, and confirm your MoviezZz Purchase!</p>
-			<form class="form-horizontal" name="finalForm">
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Name</label>
+			<p>Thanks for coming to MoviezZz, your order information is below.</p>
+
+			<div class="well">
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Name</div>
 					<div class="col-sm-10">
-						<!--<input type="text" ng-model="custName" class="form-control" id="inputFinalName" placeholder="Name" readonly>-->
-						<span>{{fV.custNames}}</span>
+						<span class="spanStyle">{{fV.custNames}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">E-Mail</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">E-Mail</div>
 					<div class="col-sm-10">
-						<!--<input type="text" ng-model="custEmaiawerawerl" class="form-control" id="inputFinalName" placeholder="E-Mail" readonly>-->
-						<span>{{fV.custEmail}}</span>
+						<span class="spanStyle">{{fV.custEmail}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Phone Number</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Phone Number</div>
 					<div class="col-sm-10">
-						<!--<input type="text" ng-model="custPawefawefhone" class="form-control" id="inputFinalName" placeholder="Phone Number" readonly>-->
-						<span>{{fV.custPhone}}</span>
+						<span class="spanStyle">{{fV.custPhone}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Movie</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Movie</div>
 					<div class="col-sm-10">
-						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Movie" readonly>-->
-						<span>{{fV.movieChosen.moviename}}</span>
+						<span class="spanStyle">{{fV.movieChosen.moviename}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Time</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Time</div>
 					<div class="col-sm-10">
-						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Time" readonly>-->
-						<span>{{fV.movieTime}}</span>
+						<span class="spanStyle">{{fV.movieTime}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Concession Purchases</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Concession Purchases</div>
 					<div class="col-sm-10">
-						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Concession Purchases" readonly>-->
-						<span>{{fV.concPurchases}}</span>
+						<span class="spanStyle">{{fV.concPurchases}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Movie Cost</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Movie Cost</div>
 					<div class="col-sm-10">
-						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Total Cost" readonly>-->
-						<span>{{fV.movieCost | currency}}</span>
+						<span class="spanStyle">{{fV.movieCost | currency}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Concession Cost</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Concession Cost</div>
 					<div class="col-sm-10">
-						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Total Cost" readonly>-->
-						<span>{{fV.concTotalCost | currency}}</span>
+						<span class="spanStyle">{{fV.concTotalCost | currency}}</span>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="inputPopcorn" class="col-sm-2 control-label">Total Cost</label>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">SubTotal</div>
 					<div class="col-sm-10">
-						<!--<input type="text" class="form-control" id="inputFinalName" placeholder="Total Cost" readonly>-->
-						<span>{{fV.finalCost | currency}}</span>
+						<span class="spanStyle">{{fV.subTotal | currency}}</span>
 					</div>
 				</div>
-				<input class="btn btn-default" type="submit"/>
-				<input class="btn btn-default" type="reset"/>
-			</form>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Tax</div>
+					<div class="col-sm-10">
+						<span class="spanStyle">{{fV.tax | currency}}</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 confirmationLabel">Total Cost</div>
+					<div class="col-sm-10">
+						<span class="spanStyle">{{fV.finalCost | currency}}</span>
+				</div>
+				<a href="/projects/MoviezZz" class="btn btn-default">New Order</a>
+			</div>
 </div>

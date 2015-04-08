@@ -1,5 +1,4 @@
 app.controller('MoviezCtrl', function($http, $scope, $location, FormValues) {
-//	var self = this;
 	
 	/*$http.get('app/data/movies.json')
 	.success(function (response) {
@@ -185,69 +184,85 @@ app.controller('MoviezCtrl', function($http, $scope, $location, FormValues) {
 	$scope.goToForm4 = function() {
 		$location.path('/confirmation.html');
 	}
+	
 	//give custom factory to all form values so they can change pages
 	$scope.fV = FormValues;
 	
+	//Helps hide select options on movietime.html
+	$scope.ShowTime = false;
+	$scope.ShowTime2 = false;
 	
 
 	
 	$scope.updateConcCost = function(concObj) {
-		$scope.fV.concObjects = concObj;
-		//console.log($scope.fV.concObjects);
+		//Function that gets cost of all the concessions
+		//and creates a string of all the items purcahsed to be put on the receipt.
 		
-		//reset value to 0
+		//Get current values of all the objects selected
+		$scope.fV.concObjects = concObj;
+		
+		//reset value to 0 and reset the value of conc Purchases
 		$scope.fV.concTotalCost = 0;
 		$scope.fV.concPurchases = "";
 		
 		for(var i = 0, l = $scope.fV.concObjects.length; i < l; i++)
 		{
-			
-			console.log($scope.fV.concObjects[i].selectedAmt + "Price -" + $scope.fV.concObjects[i].price);
 			if($scope.fV.concObjects[i].selectedAmt > 0)
 			{
 				var itemPrice = 0;
 				var itemsPurch = "";
+				//Calc Price
 				itemPrice = ($scope.fV.concObjects[i].selectedAmt) * ($scope.fV.concObjects[i].price);
-				itemsPurch = "" + $scope.fV.concObjects[i].selectedAmt + " x " + $scope.fV.concObjects[i].name + " @ " + $scope.fV.concObjects[i].price + ",";
+				itemsPurch = " " + $scope.fV.concObjects[i].selectedAmt + " x " + $scope.fV.concObjects[i].name + " @ " + $scope.fV.concObjects[i].price + ",";
+				
+				//Update Cost
 				$scope.fV.concTotalCost += itemPrice;
 				//Add Concessions purchased to summary
 				$scope.fV.concPurchases += itemsPurch; 
 			}
-			//$scope.fV.concTotalCost = ($scope.fV.concObjects[i].selectedAmt) * ($scope.fV.concObjects[i].price);
 		}
-		console.log($scope.fV.concPurchases);
-
 	}
 	
 	$scope.moviesChange = function() {
 		//Save current movie times from select movie to be put into second select
 
+		//Reset the value for Movie Time Value model
+		$scope.fV.movieTime = {};
+		
 		$scope.movTimes = $scope.fV.movieChosen.times;
 		$scope.fV.movieCost = 0; 
 		$scope.moviesTicketAmt = 1;
-		
-		
+			
 		//Show Rest of Items in Form
 		$scope.ShowTime = true;
-		
+		$scope.ShowTime2 = false;
 	};
 	
+	//Hide select options on movietime page
+	$scope.restartMovie = function() {
+		$scope.ShowTime = false;
+		$scope.ShowTime2 = false;
+	}
+	
+	//Display movie ticket selector, price of ticket, and total movie cost
 	$scope.showTickets = function() {
 		$scope.ShowTime2 = true;
 		$scope.updateMoviesCost($scope.fV.movieChosen.price);
 	}
 	
+	//update price of movie ticket based on movie selection, cost, and amount of tickets selected
 	$scope.updateMoviesCost = function(price) {
 		$scope.fV.movieCost = 0;
 		$scope.fV.movieCost = $scope.moviesTicketAmt * price;
 	}
 	
+	//Calc total on final page
 	$scope.calcTotal = function (){
-		console.log("OMG CALC RUN")
-		$scope.fV.finalCost = $scope.fV.movieCost + $scope.fV.concTotalCost;	
+		$scope.fV.subTotal = $scope.fV.movieCost + $scope.fV.concTotalCost;
+		$scope.fV.tax = $scope.fV.subTotal * 0.15;
+		$scope.fV.finalCost = $scope.fV.tax + $scope.fV.subTotal;
 	}
 	
-	$scope.ShowTime = false;
-	$scope.ShowTime2 = false;
+	
 
 });

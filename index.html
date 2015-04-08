@@ -5,7 +5,8 @@
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+ 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
@@ -17,47 +18,40 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
-	<body ">
-		<div class="container">
-			<h1>Welcome to MoviezZz!</h1>
-			<p>The year is 2022, movies go straight to release on YouTube and multi-media conglomerate Piratebay.</p> 
-			<p>Since 2019, movie theatres have been closing slowly around the world.</p>
-			<p>Now unfortunately, we are the last remaining movie theatre left on Earth.  Come to us to see some of the greatest classics ever!</p>
-		</div>
-		<div class="container" ng-controller="MoviezCtrl">
-			<p>Currently we have {{MoviesInfo.length}} movies being shown at MoviezZz, which are:</p>
-			<table class="table table-condensed table-responsive">
-				<thead>
-					<tr>
-					  <th>Theatre Number</th>
-					  <th>Movie Name</th>
-					  <th>Release Date</th>
-					  <th>IMDB Link</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="mv in MoviesInfo | orderBy: moviename">
-					  <th scope="row">{{mv.id}}</th>
-					  <td>{{mv.moviename}}</td>
-					  <td>{{mv.releasedate}}</td>
-					  <td><a type="button" ng-href="{{mv.imdbLink}}" class="btn btn-info">IMDB </a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		
-		<div class="container">
-			<p></p>
-		</div>
-		<div ng-view></div>
-		<!--Customer Info-->
-		
-		
-		<!--Movie & Time-->
-		
-		<!--Concessions-->
-		
-		<!--Confirmation-->
-		
+	<body >
+		<div class="page">
+			<div class="container">
+				<h1>Welcome to MoviezZz!</h1>
+				<p>The year is 2022, movies go straight to release on YouTube and multi-media conglomerate Piratebay.</p> 
+				<p>Since 2019, movie theatres have been closing slowly around the world.</p>
+				<p>Now unfortunately, we are the last remaining movie theatre left on Earth.  Come to us to see some of the greatest classics ever!</p>
+			</div>
+			<div class="container page-header" ng-controller="MoviezCtrl">
+				<h2>Movies showing @ MoviezZz</h2>
+				<p>Currently we have {{MoviesInfo.length}} movies.</p>
+				<table class="table table-condensed table-responsive">
+					<thead>
+						<tr>
+						  <th>Theatre Number</th>
+						  <th>Movie Name</th>
+						  <th>Release Date</th>
+						  <th>IMDB Link</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="mv in MoviesInfo | orderBy: moviename">
+						  <th scope="row">{{mv.id}}</th>
+						  <td>{{mv.moviename}}</td>
+						  <td>{{mv.releasedate}}</td>
+						  <td><a type="button" ng-href="{{mv.imdbLink}}" class="btn btn-info" target="_blank">IMDB </a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<!-- ui-router -->
+			<div ng-view></div>
+			
+		</div><!--page-->
 	</body>
 </html>
