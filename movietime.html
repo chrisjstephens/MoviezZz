@@ -5,7 +5,7 @@
 				<div class="form-group">
 					<label for="selectMovie" class="col-sm-2 control-label">Movie</label>
 					<div class="col-sm-10">
-						<select class="form-control" ng-model="fV.movieChosen" id="selectMovie" placeholder="Movie" ng-options="mov.moviename for mov in MoviesInfo" ng-change="moviesChange()" required>
+						<select class="form-control" ng-model="fV.movieChosen" id="selectMovie" placeholder="Movie" ng-options="mov.moviename for mov in cM.obj" ng-change="moviesChange()" required>
 							<option value="" disabled selected>Please select a movie</option>
 						</select>
 					</div>
@@ -21,7 +21,7 @@
 				<div class="form-group" ng-show="ShowTime2">
 					<label for="inputWater" class="col-sm-2 control-label">How many tickets?</label>
 					<div class="col-sm-5">
-						<input type="number" ng-model="moviesTicketAmt" class="form-control" name="iTickets" id="inputWater" min="1" maximum="10" ng-change="updateMoviesCost(fV.movieChosen.price)" required>
+						<input type="number" ng-model="fV.movieTickets" class="form-control" name="iTickets" id="inputWater" min="1" maximum="10" ng-change="updateMoviesCost(fV.movieChosen.price)" required>
 					</div>
 					<div class="col-sm-5">
 						<span class="spanStyle"><strong>Cost per ticket </strong> - {{fV.movieChosen.price | currency}}</span>

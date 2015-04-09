@@ -1,138 +1,138 @@
 [
-	{	
-		id: 1, 
-		moviename : "Battlefield Earth",
-		releasedate : "12 May 2000",
-		summary : "",
-		price : "500",
-		times: [
-			"1:00 PM",
-			"1:30 PM",
-			"2:00 PM",
-			"4:00 PM",
-			"5:00 PM",
-			"6:00 PM",
-			"7:00 PM",
-			"8:00 PM",
-			"9:00 PM",
-			"10:00 PM",
-			"11:00 PM"
-		]
-	},
-	{
-		id: 2,
-		moviename : "Ace Ventura: The Pet Detective",
-		releasedate : "4 February 1994",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"2:00 PM",
-			"4:00 PM",
-			"5:00 PM",
-			"6:00 PM",
-			"7:00 PM",
-			"8:00 PM",
-			"9:00 PM",
-			"10:00 PM"
-		]
-	},
-	{
-		id: 3,
-		moviename : "Armageddon",
-		releasedate : "1 July 1998",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"11:00 PM"
-		]
-	},
-	{
-		id: 4,
-		moviename : "Deep Impact",
-		releasedate : "8 May 1998",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"11:00 PM"
-		]
-	},
-	{
-		id: 5,
-		moviename : "Mars Attacks!",
-		releasedate : "13 December 1996",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"11:00 PM"
-		]
-	},
-	{
-		id: 6,
-		moviename : "The Lion King",
-		releasedate : "24 June 1994",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"11:00 PM"
-		]
-	},
-	{
-		id: 7,
-		moviename : "Home Alone",
-		releasedate : "16 November 1990",
-		summary : "",
-		price : "10",
-		times: [
-			"1:00 PM",
-			"1:30 PM",
-			"2:00 PM",
-			"4:00 PM",
-			"5:00 PM",
-			"6:00 PM",
-			"7:00 PM",
-			"8:00 PM",
-			"9:00 PM",
-			"10:00 PM",
-			"11:00 PM",
-			"12:00 PM"
-		]
-	},
-	{
-		id: 8,
-		moviename : "Free Willy",
-		releasedate : "16 July 1993",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"11:00 PM"
-		]
-	},
-	{
-		id: 9,
-		moviename : "Homeward Bound",
-		releasedate : "12 February 1993",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"11:00 PM"
-		]
-	},
-	{
-		id: 10,
-		moviename : "Space Jam",
-		releasedate : "15 November 1996",
-		summary : "",
-		price : "1",
-		times: [
-			"1:00 PM",
-			"11:00 PM"
-		]
-	}
+   {
+      "id": "1",
+      "moviename": "Battlefield Earth",
+      "releasedate": "12 May 2000",
+      "imdbLink": "http://www.imdb.com/title/tt0185183",
+      "price": "500",
+      "times": [
+         "1:00 PM",
+         "1:30 PM",
+         "2:00 PM",
+         "4:00 PM",
+         "5:00 PM",
+         "6:00 PM",
+         "7:00 PM",
+         "8:00 PM",
+         "9:00 PM",
+         "10:00 PM",
+         "11:00 PM"
+      ]
+   },
+   {
+      "id": "2",
+      "moviename": "Ace Ventura: The Pet Detective",
+      "releasedate": "4 February 1994",
+      "imdbLink": "http://www.imdb.com/title/tt0109040",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "2:00 PM",
+         "4:00 PM",
+         "5:00 PM",
+         "6:00 PM",
+         "7:00 PM",
+         "8:00 PM",
+         "9:00 PM",
+         "10:00 PM"
+      ]
+   },
+   {
+      "id": "3",
+      "moviename": "Armageddon",
+      "releasedate": "1 July 1998",
+      "imdbLink": "http://www.imdb.com/title/tt0120591",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "11:00 PM"
+      ]
+   },
+   {
+      "id": "4",
+      "moviename": "Deep Impact",
+      "releasedate": "8 May 1998",
+      "imdbLink": "http://www.imdb.com/title/tt0120647",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "11:00 PM"
+      ]
+   },
+   {
+      "id": "5",
+      "moviename": "Mars Attacks!",
+      "releasedate": "13 December 1996",
+      "imdbLink": "http://www.imdb.com/title/tt0116996",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "11:00 PM"
+      ]
+   },
+   {
+      "id": "6",
+      "moviename": "The Lion King",
+      "releasedate": "24 June 1994",
+      "imdbLink": "http://www.imdb.com/title/tt0110357",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "11:00 PM"
+      ]
+   },
+   {
+      "id": "7",
+      "moviename": "Home Alone",
+      "releasedate": "16 November 1990",
+      "imdbLink": "http://www.imdb.com/title/tt0099785",
+      "price": "10",
+      "times": [
+         "1:00 PM",
+         "1:30 PM",
+         "2:00 PM",
+         "4:00 PM",
+         "5:00 PM",
+         "6:00 PM",
+         "7:00 PM",
+         "8:00 PM",
+         "9:00 PM",
+         "10:00 PM",
+         "11:00 PM",
+         "12:00 PM"
+      ]
+   },
+   {
+      "id": "8",
+      "moviename": "Free Willy",
+      "releasedate": "16 July 1993",
+      "imdbLink": "http://www.imdb.com/title/tt0106965",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "11:00 PM"
+      ]
+   },
+   {
+      "id": "9",
+      "moviename": "Homeward Bound",
+      "releasedate": "12 February 1993",
+      "imdbLink": "http://www.imdb.com/title/tt0107131",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "11:00 PM"
+      ]
+   },
+   {
+      "id": "10",
+      "moviename": "Space Jam",
+      "releasedate": "15 November 1996",
+      "imdbLink": "http://www.imdb.com/title/tt0117705",
+      "price": "1",
+      "times": [
+         "1:00 PM",
+         "11:00 PM"
+      ]
+   }
 ]

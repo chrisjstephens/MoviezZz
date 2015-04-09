@@ -1,0 +1,168 @@
+[
+      {
+            "id": 1,
+            "moviename": "Gigli",
+            "releasedate": "1 August 2003",
+            "imdbLink": "http://www.imdb.com/title/tt0299930/",
+            "price": "250",
+            "times": [
+                  "1:11 PM",
+                  "1:30 PM",
+                  "2:45 PM",
+                  "4:00 PM",
+                  "5:40 PM",
+                  "6:00 PM",
+                  "7:40 PM",
+                  "8:00 PM",
+                  "9:30 PM",
+                  "10:00 PM",
+                  "11:00 PM"
+            ]
+      },
+      {
+            "id": 2,
+            "moviename": "Catwoman",
+            "releasedate": "23 July 2004",
+            "imdbLink": "http://www.imdb.com/title/tt0327554/",
+            "price": "111",
+            "times": [
+                  "1:00 PM",
+                  "2:00 PM",
+                  "4:00 PM",
+                  "5:00 PM",
+                  "6:00 PM",
+                  "7:00 PM",
+                  "8:00 PM",
+                  "9:00 PM",
+                  "10:00 PM"
+            ]
+      },
+      {
+            "id": 3,
+            "moviename": "The Chronicles of Riddick",
+            "releasedate": "11 June 2004",
+            "imdbLink": "http://www.imdb.com/title/tt0296572/",
+            "price": "11",
+            "times": [
+                  "1:00 PM",
+                  "4:00 PM",
+                  "7:00 PM",
+                  "11:00 PM"
+            ]
+      },
+      {
+            "id": 4,
+            "moviename": "Saw",
+            "releasedate": "29 October 2004",
+            "imdbLink": "http://www.imdb.com/title/tt0387564/",
+            "price": "99",
+            "times": [
+                  "1:30 PM",
+                  "4:30 PM",
+                  "7:30 PM",
+                  "9:00 PM"
+            ]
+      },
+      {
+            "id": 5,
+            "moviename": "Meet the Spartans",
+            "releasedate": "25 January 2008",
+            "imdbLink": "http://www.imdb.com/title/tt1073498/",
+            "price": "1.50",
+            "times": [
+                  "2:00 PM",
+                  "4:00 PM",
+                  "6:00 PM",
+                  "11:00 PM"
+            ]
+      },
+      {
+            "id": 6,
+            "moviename": "Righteous Kill",
+            "releasedate": "12 September 2008",
+            "imdbLink": "http://www.imdb.com/title/tt1034331/",
+            "price": "55",
+            "times": [
+                  "1:30 PM",
+                  "3:30 PM",
+                  "5:30 PM",
+                  "11:00 PM"
+            ]
+      },
+      {
+            "id": 7,
+            "moviename": "One Missed Call",
+            "releasedate": "4 January 2008",
+            "imdbLink": "http://www.imdb.com/title/tt0479968/",
+            "price": "10",
+            "times": [
+                  "1:15 PM",
+                  "1:30 PM",
+                  "2:15 PM",
+                  "4:45 PM",
+                  "5:00 PM",
+                  "6:45 PM",
+                  "7:25 PM",
+                  "8:00 PM",
+                  "9:00 PM",
+                  "10:10 PM",
+                  "11:00 PM",
+                  "12:00 PM"
+            ]
+      },
+      {
+            "id": 8,
+            "moviename": "National Lampoon's Gold Diggers",
+            "releasedate": "15 June 2003",
+            "imdbLink": "http://www.imdb.com/title/tt0376717/",
+            "price": "77",
+            "times": [
+                  "3:00 PM",
+                  "7:00 PM"
+            ]
+      },
+      {
+            "id": 9,
+            "moviename": "Scary Movie",
+            "releasedate": "7 July 2000",
+            "imdbLink": "http://www.imdb.com/title/tt0175142",
+            "price": "44",
+            "times": [
+                  "2:00 PM",
+                  "8:00 PM"
+            ]
+      },
+      {
+            "id": 10,
+            "moviename": "Scary Movie 2",
+            "releasedate": "4 July 2001",
+            "imdbLink": "http://www.imdb.com/title/tt0257106/",
+            "price": "1.5",
+            "times": [
+                  "1:30 PM",
+                  "2:30 PM",
+                  "11:00 PM",
+                  "11:30 PM"
+            ]
+      },
+	  {
+            "id": "11",
+            "moviename": "Battlefield Earth",
+            "releasedate": "12 May 2000",
+            "imdbLink": "http://www.imdb.com/title/tt0185183",
+            "price": "500",
+            "times": [
+                  "1:00 PM",
+                  "1:30 PM",
+                  "2:00 PM",
+                  "4:00 PM",
+                  "5:00 PM",
+                  "6:00 PM",
+                  "7:00 PM",
+                  "8:00 PM",
+                  "9:00 PM",
+                  "10:00 PM",
+                  "11:00 PM"
+            ]
+      }
+]

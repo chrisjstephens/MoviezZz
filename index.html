@@ -13,7 +13,6 @@
 		<script src="app/app.js"></script>
 		<script src="app/controllers/moviezController.js"></script>
 		<script src="app/controllers/formController.js"></script>
-		<!--<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -26,9 +25,14 @@
 				<p>Since 2019, movie theatres have been closing slowly around the world.</p>
 				<p>Now unfortunately, we are the last remaining movie theatre left on Earth.  Come to us to see some of the greatest classics ever!</p>
 			</div>
-			<div class="container page-header" ng-controller="MoviezCtrl">
+			<div class="container page-header" ng-controller="MoviezCtrl" ng-init="currentDay()">
 				<h2>Movies showing @ MoviezZz</h2>
-				<p>Currently we have {{MoviesInfo.length}} movies.</p>
+				<p>Every day we change our movie schedule, to fit you with the great movie classics from the past!.</p>
+				<p>Our schedule is based on the numerical day of the week.  For example, if the day is the 1st of the month, which is an odd number, we will show our 2000's movie schedule.  If the current date is even, we will show our 1990's movie schedule!</p>
+				<p>Today's date is {{movieDate}}, and today is a {{movieDayType}} movie day.
+				<!--<button type="button"  class="btn btn-primary" ng-click="movies90()">1990 MOVIES </button>
+				<button type="button"  class="btn btn-primary" ng-click="movies00()">2000 MOVIES </button>-->
+				<p>Currently we have {{cM.obj.length}} movies from the {{movieDay}}.</p>
 				<table class="table table-condensed table-responsive">
 					<thead>
 						<tr>
@@ -39,11 +43,12 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="mv in MoviesInfo | orderBy: moviename">
+						<!--Display movies depending on day-->
+						<tr ng-repeat="mv in cM.obj">
 						  <th scope="row">{{mv.id}}</th>
 						  <td>{{mv.moviename}}</td>
 						  <td>{{mv.releasedate}}</td>
-						  <td><a type="button" ng-href="{{mv.imdbLink}}" class="btn btn-info" target="_blank">IMDB </a></td>
+						  <td><a ng-href="{{mv.imdbLink}}" class="btn btn-info" target="_blank">IMDB </a></td>
 						</tr>
 					</tbody>
 				</table>

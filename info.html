@@ -25,10 +25,11 @@
 				<div class="form-group">
 					<label for="inputPhone" class="col-sm-2 control-label">Phone Number</label>
 					<div class="col-sm-5">
-						<input type="phone" ng-model="fV.custPhone" class="form-control" id="inputPhone" name="iPhone" placeholder="Phone Number" required>
+						<input type="text" ng-model="fV.custPhone" class="form-control" id="inputPhone" name="iPhone" placeholder="Phone Number" ng-pattern="/\d{3}-\d{3}-\d{4}/" required>
 					</div>
 					<div class="col-sm-5">
-						<span ng-show="infoForm.$dirty && infoForm.iPhone.$error.required" class="spanStyle text-danger">Please enter a phone number.</span>
+						<span ng-show="infoForm.$dirty && infoForm.iPhone.$error.required" class="spanStyle text-danger">Please enter a phone number in the format of 444-444-4444.</span>
+						<span ng-show="infoForm.$dirty && infoForm.iPhone.$error.pattern" class="spanStyle text-danger">Invalid format, please enter a phone number in the format of 444-444-4444.</span>
 					</div>
 				</div>
 				<input class="btn btn-default" ng-disabled="infoForm.$invalid" type="submit" />

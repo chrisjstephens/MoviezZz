@@ -13,7 +13,13 @@ body{
 	display:inline-block;
 }
 .confirmationLabel{
-	text-align: right;
+	text-align: left;
 	padding: 7px 0px;
 	font-weight:bold;
+}
+
+@media (min-width: 768px){
+	.confirmationLabel{
+		text-align: right;
+	}
 }
