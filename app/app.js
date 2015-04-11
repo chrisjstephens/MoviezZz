@@ -24,12 +24,10 @@ app.config(function($routeProvider) {
 app.factory('CurrentMovies', function(){
 	
 	var currMov = {
-		aa : 'workplz',
 		obj : { }
 	};
 	
 	return currMov;
-		
 });
 
 app.factory('FormValues', function(){

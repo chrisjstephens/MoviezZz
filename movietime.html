@@ -19,21 +19,21 @@
 					</div>
 				</div>
 				<div class="form-group" ng-show="ShowTime2">
-					<label for="inputWater" class="col-sm-2 control-label">How many tickets?</label>
+					<label for="inputTickets" class="col-sm-2 control-label">How many tickets?</label>
 					<div class="col-sm-5">
-						<input type="number" ng-model="fV.movieTickets" class="form-control" name="iTickets" id="inputWater" min="1" maximum="10" ng-change="updateMoviesCost(fV.movieChosen.price)" required>
+						<input type="number" ng-model="fV.movieTickets" class="form-control" name="iTickets" id="inputTickets" min="1" ng-change="updateMoviesCost(fV.movieChosen.price)" required>
 					</div>
 					<div class="col-sm-5">
 						<span class="spanStyle"><strong>Cost per ticket </strong> - {{fV.movieChosen.price | currency}}</span>
 					</div>
 				</div>
 				<div class="form-group" ng-show="ShowTime2">
-					<label for="inputWater" class="col-sm-2 control-label">Total Cost</label>
+					<label for="inputMovieCost" class="col-sm-2 control-label">Total Cost</label>
 					<div class="col-sm-5">
-						<span id="inputWater" class="spanStyle">{{fV.movieCost | currency}}</span>
+						<span id="inputMovieCost" class="spanStyle">{{fV.movieCost | currency}}</span>
 					</div>
 				</div>
-				<input class="btn btn-default" ng-disabled="movieTimeForm.$invalid" type="submit"/>
-				<input class="btn btn-default" ng-click="restartMovie()" type="reset"/>
+				<input class="btn btn-default" ng-disabled="movieTimeForm.$invalid && !ShowTime2" type="submit">
+				<input class="btn btn-default" ng-click="restartMovie()" type="reset">
 			</form>
 </div>

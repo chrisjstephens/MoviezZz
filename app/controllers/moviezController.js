@@ -8,7 +8,7 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 		//Get current day to populate movie schedule
 		var d = new Date();
 		
-		var month = d.getMonth();
+		var month = d.getMonth() + 1;
 		var day = d.getDate();
 		var year = "2022";
 		
@@ -17,14 +17,14 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 		var day = d.getDate();
 		if (day % 2 ){
 			//If the day is odd populate odd/00s movie schedule
-			console.log("Odd Day " + d.getDate());
+			//console.log("Odd Day " + d.getDate());
 			$scope.movies00();
 			$scope.movieDate = fullDate
 			$scope.movieDay = "2000's";
 			$scope.movieDayType = "odd"
 		} else {
 			//If the day is odd populate even/90's movie schedule
-			console.log("Even Day " + d.getDate());
+			//console.log("Even Day " + d.getDate());
 			$scope.movies90();
 			$scope.movieDate = fullDate
 			$scope.movieDay = "1990's";
@@ -39,7 +39,7 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 			var movieData = response;
 			
 			$scope.cM.obj = movieData;
-			console.log("2000's movies loaded.");
+			//console.log("2000's movies loaded.");
 		});
 	}
 	
@@ -49,9 +49,8 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 			var movieData = response;
 			
 			$scope.cM.obj = movieData;
-			console.log($scope.cM.obj.length + " length");
 			
-			console.log("1990s movies loaded.");
+			//console.log("1990s movies loaded.");
 		});
 	}
 	
@@ -148,8 +147,9 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 		$scope.fV.movieTime = {};
 		
 		$scope.movTimes = $scope.fV.movieChosen.times;
+		//Set MovieCost to 0 so that form can't be submitted inproperly
 		$scope.fV.movieCost = 0; 
-		$scope.fV.movieTickets = 1;
+		$scope.fV.movieTickets = 0;
 			
 		//Show Rest of Items in Form
 		$scope.ShowTime = true;
@@ -165,6 +165,7 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 	//Display movie ticket selector, price of ticket, and total movie cost
 	$scope.showTickets = function() {
 		$scope.ShowTime2 = true;
+		$scope.fV.movieTickets = 1;
 		$scope.updateMoviesCost($scope.fV.movieChosen.price);
 	}
 	
@@ -176,10 +177,10 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 
 	
 	//Check if first two form pages are filled out properly
-	//If they are fillled properly display receipt
+	//If they are filled, properly display receipt
 	//Else display error message and prompt user to create a new order
 	$scope.finalPageCheck = function() {
-		console.log("into check");
+		//console.log("into check");
 		if($scope.fV.form1 && $scope.fV.form2){
 			console.log("forms pass");
 			$scope.fV.finalForm =  true;
@@ -192,7 +193,7 @@ app.controller('MoviezCtrl', function($http, $scope, $location, CurrentMovies, F
 	
 	//Calc total on final page
 	$scope.calcTotal = function (){
-		console.log("run total");
+		//console.log("run total");
 		$scope.fV.subTotal = $scope.fV.movieCost + $scope.fV.concTotalCost;
 		$scope.fV.tax = $scope.fV.subTotal * 0.15;
 		$scope.fV.finalCost = $scope.fV.tax + $scope.fV.subTotal;
